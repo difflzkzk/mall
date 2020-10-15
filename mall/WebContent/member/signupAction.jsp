@@ -15,7 +15,7 @@
 	
 	//사용가능한 이베일인지 확인
 	MemberDao memberDao = new MemberDao();
-	Member member = memberDao.selectMemberEmailCk(memberEmail);
+	Member member = memberDao.selectMemberEmailCk(memberEmail); //가입할떄 이메일 체크해주는 메서드 호출함
 	if(member != null) {
 		System.out.println("이미 사용중인 이메일 입니다.");
 		response.sendRedirect(request.getContextPath()+"/member/signup.jsp");
@@ -23,12 +23,12 @@
 	}
 	
 	Member paramMember = new Member();
-	paramMember.memberEmail = memberEmail;
-	paramMember.memberPw = memberPw;
-	paramMember.memberName = memberName;
+	paramMember.setMemberEmail(memberEmail);  //get set  메서드 .set() .get() 설정
+	paramMember.setMemberPw(memberPw);
+	paramMember.setMemberName(memberName);
 	memberDao.insertMember(paramMember); //회원가입 호출
 	
 	
 	//로그인성공
-	response.sendRedirect(request.getContextPath()+"/member/login.jsp");
+	response.sendRedirect(request.getContextPath()+"/member/loginForm.jsp");
 %>

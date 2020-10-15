@@ -9,7 +9,7 @@
 <body>
 <div class="container">
 <h1>회원 가입</h1>
-<form action="<%=request.getContextPath()%>/member/signupAction.jsp">
+<form method="post" action="<%=request.getContextPath()%>/member/signupAction.jsp">
 	<table class="table">
 		<tr>
 			<td>member_email</td>

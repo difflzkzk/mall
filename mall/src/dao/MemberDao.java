@@ -22,6 +22,7 @@ public class MemberDao {
 		conn.close();
 		return memberEmail;
 	}	
+	//insert Member
 	public void insertMember(Member member) throws Exception {
 		DBUtil dbUtil = new DBUtil();
 		Connection conn = dbUtil.getConnection();
@@ -35,7 +36,7 @@ public class MemberDao {
 		
 		conn.close();
 	}
-	
+	//select Member
 	public Member selectMemberEmailCk(String memberEmail) throws Exception {
 		Member member = null;
 		DBUtil dbUtil = new DBUtil();

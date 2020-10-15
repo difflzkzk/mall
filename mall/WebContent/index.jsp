@@ -8,10 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <title>Insert title here</title>
 </head>
 <%
@@ -29,7 +27,7 @@ ArrayList<Category> categoryList2 = categoryDao.selectCategoryCkList();
 			<div Class="row">
 				<!-- 타이틀 -->
 				<div class="col">
-				<h2>Goodee Shop</h2>
+				<h2><a href="index.jsp">Goodee Shop</a></h2>
 				</div>
 				<div class="col"><!-- 검색창 -->
 				<form>
@@ -37,9 +35,9 @@ ArrayList<Category> categoryList2 = categoryDao.selectCategoryCkList();
 					<button type="submit">검색</button>
 				</form>
 				</div>
-				<div class="col"><!-- 아이콘 --> <i class='fas fa-user-alt'
-					style='font-size: 40px;'></i> <i class='fas fa-shopping-cart'
-					style='font-size: 40px;'></i> </dic>
+				<!-- 아이콘 -->
+				<div class="col"> <i class='fas fa-user-alt'style='font-size: 40px;'></i>
+				 <i class='fas fa-shopping-cart'style='font-size: 40px;'></i> </dic>
 			</div>
 
 		</div>
@@ -66,7 +64,7 @@ ArrayList<Category> categoryList2 = categoryDao.selectCategoryCkList();
 						href="<%=request.getContextPath()%>/member/logoutAction.jsp">로그아웃</a>
 					</li>
 					<li class="nav-item"><a class="nav-link"
-						href="<%=request.getContextPath()%>/member/logoutAction.jsp">회원정보</a>
+						href="<%=request.getContextPath()%>/member/myOrderList.jsp">회원정보</a>
 					</li>
 				</ul>
 				<%
@@ -82,7 +80,7 @@ ArrayList<Category> categoryList2 = categoryDao.selectCategoryCkList();
 						<%
 							for (Category c : categoryList1) {
 						%>
-						<a href=""
+						<a href="/mall/categoryList.jsp"
 							style="border-radius: 12px; width: 280px; padding: 10px;"
 							class="btn btn-secondary btn-lg btn-block"><%=c.getCategoryName()%></a>
 						<%
